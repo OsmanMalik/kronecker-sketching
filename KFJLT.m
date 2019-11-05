@@ -1,14 +1,20 @@
 function dist = KFJLT(X, Y, J, repl)
 %KFJLT Estimate distance between pairs of Kronecker vectors using KFJLT
 %   
-%   dist = KFJLT(X, Y, J, repl) computes KFJLT sketches of the column
-%   vectors of khatrirao(X) and khatrirao(Y) with a target sketch dimension
-%   of J, and then computes the distance between each corresponding vector
-%   in khatrirao(X) and khatrirao(Y). These estimated distances are then
+%   dist = KFJLT(X, Y, J, repl) computes Kronecker fast
+%   Johnson-Lindenstrauss transform (KFJLT) sketches of the column vectors
+%   of khatrirao(X) and khatrirao(Y) with a target sketch dimension of J,
+%   and then computes the distance between each corresponding vector in
+%   khatrirao(X) and khatrirao(Y). These estimated distances are then
 %   returned in the vector dist. Note that X and Y should be cells of
 %   matrices, and J should be a positive integer. The argument repl is set
 %   to true for sampling with replacement, and to false for sampling
-%   without replacement.
+%   without replacement. For more information on KFJLT, see [Ji19].
+%
+%   REFERENCES:
+%   
+%   [Ji19]  R Jin, TG Kolda, R Ward. Faster Johnson-Lindenstrauss 
+%           Transforms via Kronecker Products. arXiv:1909.04801, 2019.
 
 % Get degree, size and number of trials
 degree          = length(X);

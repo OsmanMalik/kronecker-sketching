@@ -8,7 +8,13 @@ function dist = LS(X, Y, J)
 %   khatrirao(X) and khatrirao(Y). The sketches are computed by using
 %   estimated leverage score sampling. These estimated distances are then
 %   returned in the vector dist. Note that X and Y should be cells of
-%   matrices, and J should be a positive integer.
+%   matrices, and J should be a positive integer. For more info on the
+%   estimated leverage score sampling approach, see [Ch16].
+%
+%   REFERENCES:
+%   
+%   [Ch16]  D Cheng, R Peng, I Perros, Y Liu. SPALS: Fast Alternating Least 
+%           Squares via Implicit Leverage Scores Sampling. NeurIPS, 2016.
 
 % Get degree, size and number of trials
 degree          = length(X);

@@ -8,8 +8,14 @@
 %       - TensorSketch [Di18]
 %       - Estimated leverage score sampling [Ch16]
 %
+%   This script uses the khatrirao function from Tensor Toolbox [Ba15].
+%
 %   REFERENCES:
-%   
+%
+%   [Ba15]  B. W. Bader, T. G. Kolda and others. MATLAB Tensor Toolbox 
+%           Version 2.6, Available online, February 2015. 
+%           URL: http://www.sandia.gov/~tgkolda/TensorToolbox/.
+%
 %   [Ch16]  D Cheng, R Peng, I Perros, Y Liu. SPALS: Fast Alternating Least 
 %           Squares via Implicit Leverage Scores Sampling. NeurIPS, 2016.
 %
@@ -44,8 +50,8 @@ Y   = cell(degree,1);
 for d = 1:degree
     switch rand_vec_type
         case 'normal'
-            X{d}    = randn(sz,no_trials);
-            Y{d}    = randn(sz,no_trials);
+            X{d}    = randn(sz, no_trials);
+            Y{d}    = randn(sz, no_trials);
         case 'sparse'
             % Sparse is somewhat adversarial to LS, TRP and TS
             X{d}    = 1e+2*full(sprandn(sz, no_trials, .15));
@@ -60,6 +66,7 @@ for d = 1:degree
             error('Invalid vec_type')
     end
 end
+
 X_full  = khatrirao(X);
 Y_full  = khatrirao(Y);
 dist    = sqrt(sum( (X_full-Y_full).^2, 1 ));
@@ -79,41 +86,46 @@ for e_dim = 1:length(embedding_dim)
     % Standard Gaussian sketch
     fprintf('\t Running Gaussian sketch...')
     gs_dist             = GS(X, Y, J);
-    mean_dist(1, e_dim) = mean(abs(gs_dist(idx)./dist(idx) - 1));
-    std_dist(1, e_dim)  = std(abs(gs_dist(idx)./dist(idx) - 1));
-    max_dist(1, e_dim)  = max(abs(gs_dist(idx)./dist(idx) - 1));
+    gs_dev              = abs(gs_dist(idx)./dist(idx) - 1);
+    mean_dist(1, e_dim) = mean(gs_dev);
+    std_dist(1, e_dim)  = std(gs_dev);
+    max_dist(1, e_dim)  = max(gs_dev);
     fprintf(' Done!\n')
     
     % KFJLT sketch
     fprintf('\t Running KFJLT sketch...')
     kfjlt_dist          = KFJLT(X, Y, J, KFJLT_repl);
-    mean_dist(2, e_dim) = mean(abs(kfjlt_dist(idx)./dist(idx) - 1));
-    std_dist(2, e_dim)  = std(abs(kfjlt_dist(idx)./dist(idx) - 1));
-    max_dist(2, e_dim)  = max(abs(kfjlt_dist(idx)./dist(idx) - 1));
+    kfjlt_dev           = abs(kfjlt_dist(idx)./dist(idx) - 1);
+    mean_dist(2, e_dim) = mean(kfjlt_dev);
+    std_dist(2, e_dim)  = std(kfjlt_dev);
+    max_dist(2, e_dim)  = max(kfjlt_dev);
     fprintf(' Done!\n')
     
     % TRP sketch
     fprintf('\t Running TRP sketch...')
     trp_dist            = TRP(X, Y, J);
-    mean_dist(3, e_dim) = mean(abs(trp_dist(idx)./dist(idx) - 1));
-    std_dist(3, e_dim)  = std(abs(trp_dist(idx)./dist(idx) - 1));
-    max_dist(3, e_dim)  = max(abs(trp_dist(idx)./dist(idx) - 1));
+    trp_dev             = abs(trp_dist(idx)./dist(idx) - 1);
+    mean_dist(3, e_dim) = mean(trp_dev);
+    std_dist(3, e_dim)  = std(trp_dev);
+    max_dist(3, e_dim)  = max(trp_dev);
     fprintf(' Done!\n')
     
     % TensorSketch
     fprintf('\t Running TensorSketch...')
     ts_dist             = TS(X, Y, J);
-    mean_dist(4, e_dim) = mean(abs(ts_dist(idx)./dist(idx) - 1));
-    std_dist(4, e_dim)  = std(abs(ts_dist(idx)./dist(idx) - 1));
-    max_dist(4, e_dim)  = max(abs(ts_dist(idx)./dist(idx) - 1));
+    ts_dev              = abs(ts_dist(idx)./dist(idx) - 1);
+    mean_dist(4, e_dim) = mean(ts_dev);
+    std_dist(4, e_dim)  = std(ts_dev);
+    max_dist(4, e_dim)  = max(ts_dev);
     fprintf(' Done!\n')
     
     % Estimated leverage score sampling
     fprintf('\t Running leverage score sampling...')
     ls_dist             = LS(X, Y, J);
-    mean_dist(5, e_dim) = mean(abs(ls_dist(idx)./dist(idx) - 1));
-    std_dist(5, e_dim)  = std(abs(ls_dist(idx)./dist(idx) - 1));
-    max_dist(5, e_dim)  = max(abs(ls_dist(idx)./dist(idx) - 1));
+    ls_dev              = abs(ls_dist(idx)./dist(idx) - 1);
+    mean_dist(5, e_dim) = mean(ls_dev);
+    std_dist(5, e_dim)  = std(ls_dev);
+    max_dist(5, e_dim)  = max(ls_dev);
     fprintf(' Done!\n')
 
 end

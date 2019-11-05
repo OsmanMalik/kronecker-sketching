@@ -6,7 +6,13 @@ function dist = TS(X, Y, J)
 %   then computes the distance between each corresponding vector in
 %   khatrirao(X) and khatrirao(Y). These estimated distances are then
 %   returned in the vector dist. Note that X and Y should be cells of
-%   matrices, and J should be a positive integer.
+%   matrices, and J should be a positive integer. For more info on
+%   TensorSketch, see e.g. [Di18].
+%
+%   REFERENCES:
+%   
+%   [Di18]  H Diao, Z Song, W Sun, DP Woodruff. Sketching for Kronecker 
+%           Product Regression and P-splines. AISTATS, 2018.
 
 % Get degree, size and number of trials
 degree          = length(X);

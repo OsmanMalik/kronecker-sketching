@@ -6,7 +6,14 @@ function dist = TRP(X, Y, J)
 %   sketch dimension of J, and then computes the distance between each 
 %   corresponding vector in khatrirao(X) and khatrirao(Y). These estimated 
 %   distances are then returned in the vector dist. Note that X and Y
-%   should be cells of matrices, and J should be a positive integer.
+%   should be cells of matrices, and J should be a positive integer. For
+%   more info on TRP, see [Su18].
+%
+%   REFERENCES:
+%   
+%   [Su18]  Y Sun, Y Guo, JA Tropp, M Udell. Tensor Random Projection for 
+%           Low Memory Dimension Reduction. NeurIPS Workshop on Relational 
+%           Representation Learning, 2019.
 
 % Get degree, size and number of trials
 degree          = length(X);
