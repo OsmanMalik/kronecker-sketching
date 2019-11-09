@@ -38,8 +38,8 @@
 no_trials       = 1000;
 degree          = 3;
 sz              = 16;
-embedding_dim   = 300;
-rand_vec_type   = 'sparse'; 
+embedding_dim   = 100:100:1000;
+rand_vec_type   = 'large-single'; 
 no_sketches     = 5;
 KFJLT_repl      = false;
 
@@ -131,6 +131,10 @@ for e_dim = 1:length(embedding_dim)
 end
 
 %% Print and save results
+
+fprintf('\nSaving results...')
+save(['results_experiment1_', rand_vec_type], 'mean_dist', 'std_dist', 'max_dist');
+fprintf(' Done!\n\n')
 
 disp(mean_dist)
 disp(' ')
