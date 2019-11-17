@@ -3,3 +3,6 @@
 *.mexw64
 *.mexa64
 *.mat
+
+# Other
+*.pdf

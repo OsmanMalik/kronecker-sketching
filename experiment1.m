@@ -39,9 +39,10 @@ no_trials       = 1000;
 degree          = 3;
 sz              = 16;
 embedding_dim   = 100:100:1000;
-rand_vec_type   = 'large-single'; 
+rand_vec_type   = 'sparse'; 
 no_sketches     = 5;
 KFJLT_repl      = false;
+sparse_nnz      = 3;
 
 %% Create Kronecker vectors and compute true distances
 
@@ -54,8 +55,15 @@ for d = 1:degree
             Y{d}    = randn(sz, no_trials);
         case 'sparse'
             % Sparse is somewhat adversarial to LS, TRP and TS
-            X{d}    = 1e+2*full(sprandn(sz, no_trials, .15));
-            Y{d}    = 1e+2*full(sprandn(sz, no_trials, .15));
+            X{d}    = zeros(sz, no_trials);
+            Y{d}    = zeros(sz, no_trials);
+            rnd_idx = @() randsample(sz, sparse_nnz, false);
+            for tr = 1:no_trials
+                X{d}(rnd_idx(), tr) = 1e+2*randn(sparse_nnz, 1);
+                Y{d}(rnd_idx(), tr) = 1e+2*randn(sparse_nnz, 1);
+            end
+            %X{d}    = 1e+2*full(sprandn(sz, no_trials, .15));
+            %Y{d}    = 1e+2*full(sprandn(sz, no_trials, .15));
         case 'large-single'
             % This adversarial to LS, TRP and TS
             rids1   = randsample(sz, no_trials, true);
