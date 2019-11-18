@@ -12,6 +12,7 @@ The script **experiment1** runs the experiment we present in our paper. It compa
 * Tensor Random Projection (TRP)
 * TensorSketch
 * Sampling based on estimated leverage scores
+
 The script allows choosing between three different distributions for the Kronecker vectors: normal, sparse, and a single large entry. The three figures below show the results we present in our paper for each of the three different distribution types. 
 
 ![Experiment results](experiment1-normal.png)
