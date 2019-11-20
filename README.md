@@ -1,9 +1,9 @@
 # Comparison of Different Methods for Sketching of Kronecker Vectors
 This is an implementation of an experiment that compares five different sketch methods when applied to vectors with Kronecker structure. The experiment and its results are presented in our paper
 
-O. A. Malik and S. Becker. Guarantees for the Kronecker Fast Johnson--Lindenstrauss Transform Using a Coherence and Sampling Argument. *To appear on arXiv soon*, 2019.
+O. A. Malik and S. Becker. Guarantees for the Kronecker Fast Johnson-Lindenstrauss Transform Using a Coherence and Sampling Argument. *arXiv:1911.08424 [math.NA]*, 2019.
 
-It is available at [TBA].
+It is available at https://arxiv.org/abs/1911.08424.
 
 ## Some Further Details
 The script **experiment1** runs the experiment we present in our paper. It compares five different sketch types:
@@ -29,11 +29,11 @@ Please see our paper for further details.
 ## Requirements
 Portions of our code requires Tensor Toolbox version 2.6 by Bader, Kolda and others (available at http://www.sandia.gov/~tgkolda/TensorToolbox/).
 
+## Installation
+Run the file **compile_all_mex.m** inside the folder help_functions. Alternatively, simply compile each C file individually by running "mex filename.c" inside Matlab.
+
 ## Referencing This Code
-If you use our code in any of your own work, please reference our paper:
-```
-TBA
-``` 
+If you use our code in any of your own work, please reference our paper.
 
 We have tried our best to include references in our code to other works we use, so please also reference those works as appropriate.
 
