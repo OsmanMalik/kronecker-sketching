@@ -37,7 +37,7 @@ Run the file **compile_all_mex.m** inside the folder help_functions. Alternative
 If you use our code in any of your own work, please reference our paper:
 ```
 @article{Malik-Becker-2019-KFJLT,
-  title = {Guarantees for the Kronecker Fast Johnson-Lindenstrauss Transform Using a Coherence and Sampling Argument},
+  title = {Guarantees for the {K}ronecker Fast {J}ohnson-{L}indenstrauss Transform Using a Coherence and Sampling Argument},
   journal = {arXiv preprint arXiv:1911.08424},
   author = {Osman Asif Malik and Stephen Becker},
   year = {2019},
