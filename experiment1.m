@@ -12,7 +12,7 @@
 %
 %   REFERENCES:
 %
-%   [Ba15]  B. W. Bader, T. G. Kolda and others. MATLAB Tensor Toolbox 
+%   [Ba15]  BW Bader, TG Kolda and others. MATLAB Tensor Toolbox 
 %           Version 2.6, Available online, February 2015. 
 %           URL: http://www.sandia.gov/~tgkolda/TensorToolbox/.
 %
@@ -62,8 +62,6 @@ for d = 1:degree
                 X{d}(rnd_idx(), tr) = 1e+2*randn(sparse_nnz, 1);
                 Y{d}(rnd_idx(), tr) = 1e+2*randn(sparse_nnz, 1);
             end
-            %X{d}    = 1e+2*full(sprandn(sz, no_trials, .15));
-            %Y{d}    = 1e+2*full(sprandn(sz, no_trials, .15));
         case 'large-single'
             % This adversarial to LS, TRP and TS
             rids1   = randsample(sz, no_trials, true);

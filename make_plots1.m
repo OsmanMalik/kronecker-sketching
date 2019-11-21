@@ -20,7 +20,6 @@ for k = 1:5
     plot(x, mean_dist(k,:), 'linewidth', 2, 'marker', markers{k}, 'markersize', 6, 'color', colors(k,:))
 end
 legend('Gaussian', 'KFJLT', 'TRP', 'TensorSketch', 'Sampling')
-%ylabel('Mean distortion')
 title('Mean')
 xlabel('Embedding dimension')
 axis tight
@@ -30,7 +29,6 @@ hold on
 for k = 1:5
     plot(x, std_dist(k,:), 'linewidth', 2, 'marker', markers{k}, 'markersize', 6, 'color', colors(k,:))
 end
-%ylabel('Standard distortion deviation')
 title('Standard deviation')
 xlabel('Embedding dimension')
 axis tight
@@ -40,7 +38,6 @@ hold on
 for k = 1:5
     plot(x, max_dist(k,:), 'linewidth', 2, 'marker', markers{k}, 'markersize', 6, 'color', colors(k,:))
 end
-%ylabel('Max distortion')
 title('Maximum')
 xlabel('Embedding dimension')
 axis tight
@@ -61,7 +58,6 @@ for k = 1:5
     plot(x, mean_dist(k,:), 'linewidth', 2, 'marker', markers{k}, 'markersize', 6, 'color', colors(k,:))
 end
 legend('Gaussian', 'KFJLT', 'TRP', 'TensorSketch', 'Sampling')
-%ylabel('Mean distortion')
 title('Mean')
 xlabel('Embedding dimension')
 axis tight
@@ -71,7 +67,6 @@ hold on
 for k = 1:5
     plot(x, std_dist(k,:), 'linewidth', 2, 'marker', markers{k}, 'markersize', 6, 'color', colors(k,:))
 end
-%ylabel('Standard distortion deviation')
 title('Standard deviation')
 xlabel('Embedding dimension')
 axis tight
@@ -81,7 +76,6 @@ hold on
 for k = 1:5
     plot(x, max_dist(k,:), 'linewidth', 2, 'marker', markers{k}, 'markersize', 6, 'color', colors(k,:))
 end
-%ylabel('Max distortion')
 title('Maximum')
 xlabel('Embedding dimension')
 axis tight
@@ -102,7 +96,6 @@ for k = 1:5
     plot(x, mean_dist(k,:), 'linewidth', 2, 'marker', markers{k}, 'markersize', 6, 'color', colors(k,:))
 end
 legend('Gaussian', 'KFJLT', 'TRP', 'TensorSketch', 'Sampling')
-%ylabel('Mean distortion')
 title('Mean')
 xlabel('Embedding dimension')
 axis tight
@@ -112,7 +105,6 @@ hold on
 for k = 1:5
     plot(x, std_dist(k,:), 'linewidth', 2, 'marker', markers{k}, 'markersize', 6, 'color', colors(k,:))
 end
-%ylabel('Standard distortion deviation')
 title('Standard deviation')
 xlabel('Embedding dimension')
 axis tight
@@ -122,7 +114,6 @@ hold on
 for k = 1:5
     plot(x, max_dist(k,:), 'linewidth', 2, 'marker', markers{k}, 'markersize', 6, 'color', colors(k,:))
 end
-%ylabel('Max distortion')
 title('Maximum')
 xlabel('Embedding dimension')
 axis tight

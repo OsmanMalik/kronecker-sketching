@@ -14,7 +14,7 @@ function dist = GS(X, Y, J)
 %
 %   REFERENCES:
 %
-%   [Ba15]  B. W. Bader, T. G. Kolda and others. MATLAB Tensor Toolbox 
+%   [Ba15]  BW Bader, TG Kolda and others. MATLAB Tensor Toolbox 
 %           Version 2.6, Available online, February 2015. 
 %           URL: http://www.sandia.gov/~tgkolda/TensorToolbox/.
 %
