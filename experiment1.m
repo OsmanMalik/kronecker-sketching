@@ -1,4 +1,4 @@
-%EXPERIMENT1 Compare performance of different sketch techniques
+%EXPERIMENT1 Compare different sketch techniques on synthetic data
 %
 %   In this script we compare the performance of the following sketch
 %   techniques applied to vectors with Kronecker structure:

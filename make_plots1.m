@@ -1,11 +1,11 @@
 % Make plots from mat files saved from experiment1.m
 
-x   = 100:100:1000;
-colors = get(gca, 'colororder');
+x       = 100:100:1000;
+colors  = get(gca, 'colororder');
 markers = {'+', 'o', 'x', 's', 'd'};
+width   = 1100;
+height  = 250;
 close all
-width = 1100;
-height = 250;
 
 % -------------------------------------------------------------------------
 % Figure 1: Normal
