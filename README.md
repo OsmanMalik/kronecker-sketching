@@ -2,7 +2,7 @@
 This is an implementation of experiments that compare five different sketch methods when applied to vectors with Kronecker structure. 
 For further information on the experiments and their results, please see our paper:
 
-O. A. Malik and S. Becker. *Guarantees for the Kronecker fast Johnson–Lindenstrauss transform using a coherence and sampling argument*. **Linear Algebra and its Applications** 602, pp. 120-137, 2020. [DOI link](https://doi.org/10.1016/j.laa.2020.05.004)
+O. A. Malik and S. Becker. *Guarantees for the Kronecker fast Johnson–Lindenstrauss transform using a coherence and sampling argument*. **Linear Algebra and its Applications** 602, pp. 120-137, 2020. [DOI link](https://doi.org/10.1016/j.laa.2020.05.004) [arXiv preprint](https://arxiv.org/abs/1911.08424)
 
 ## Some Further Details
 The script **experiment1** runs the experiments we present in Section 5.1 of our paper. It compares five different sketch types:
