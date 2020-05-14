@@ -4,10 +4,8 @@ For further information on the experiments and their results, please see our pap
 
 O. A. Malik and S. Becker. *Guarantees for the Kronecker fast Johnson–Lindenstrauss transform using a coherence and sampling argument*. **Linear Algebra and its Applications** 602, pp. 120-137, 2020. [DOI link](https://doi.org/10.1016/j.laa.2020.05.004)
 
-It is available at https://arxiv.org/abs/1911.08424.
-
 ## Some Further Details
-The script **experiment1** runs the experiment we present in our paper. It compares five different sketch types:
+The script **experiment1** runs the experiments we present in Section 5.1 of our paper. It compares five different sketch types:
 * A Gaussian sketch
 * The Kronecker fast Johnson-Lindenstrauss transform (KFJLT)
 * Tensor Random Projection (TRP)
@@ -25,6 +23,14 @@ The script allows choosing between three different distributions for the Kroneck
 ![Experiment results](experiment1-large-single.png)
 *Fig. 3: Single large entry*
 
+The script **experiment2** runs the experiment we present in Section 5.2 of our paper. It compares the KFJLT, TRP, TensorSketch and estimated leverage score sampling methods when applied to tensors in CP format. The tensors represent approximations of MNIST digits 4 and 9. Fig. 4 shows an example of a 4 and a 9, with their corresponding approximations. Fig. 5 shows the results from applying the sketches to these tensors.
+
+![4 and 9 examples](4-9-plot.png)
+*Fig. 4: Example of a 4 and a 9 with corresponding approximations*
+
+![Experiment results](experiment2.png)
+*Fig. 5: Results of sketching tensors*
+
 Please see our paper for further details.
 
 ## Requirements
@@ -36,11 +42,17 @@ Run the file **compile_all_mex.m** inside the folder help_functions. Alternative
 ## Referencing This Code
 If you use our code in any of your own work, please reference our paper:
 ```
-@article{Malik-Becker-2019-KFJLT,
-  title = {Guarantees for the {K}ronecker Fast {J}ohnson-{L}indenstrauss Transform Using a Coherence and Sampling Argument},
-  journal = {arXiv preprint arXiv:1911.08424},
-  author = {Osman Asif Malik and Stephen Becker},
-  year = {2019},
+@article{MALIK2020120,
+	title = "Guarantees for the {K}ronecker fast {J}ohnson--{L}indenstrauss transform using a coherence and sampling argument",
+	journal = "Linear Algebra and its Applications",
+	volume = "602",
+	pages = "120-137",
+	year = "2020",
+	issn = "0024-3795",
+	doi = "https://doi.org/10.1016/j.laa.2020.05.004",
+	url = "http://www.sciencedirect.com/science/article/pii/S0024379520302354",
+	author = "Osman Asif Malik and Stephen Becker",
+	keywords = "Johnson–Lindenstrauss lemma, Subspace embedding, Sketching, Kronecker product, Tensor product",
 }
 ```
 
