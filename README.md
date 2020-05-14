@@ -1,8 +1,8 @@
 # Comparison of Different Methods for Sketching of Kronecker Vectors
-This is an implementation of an experiment that compares five different sketch methods when applied to vectors with Kronecker structure. 
-For further information on the experiment and its results, please see our paper:
+This is an implementation of experiments that compare five different sketch methods when applied to vectors with Kronecker structure. 
+For further information on the experiments and their results, please see our paper:
 
-O. A. Malik and S. Becker. Guarantees for the Kronecker Fast Johnson-Lindenstrauss Transform Using a Coherence and Sampling Argument. *arXiv preprint arXiv:1911.08424*, 2019.
+O. A. Malik and S. Becker. *Guarantees for the Kronecker fast Johnson–Lindenstrauss transform using a coherence and sampling argument*. **Linear Algebra and its Applications** 602, pp. 120-137, 2020. [DOI link](https://doi.org/10.1016/j.laa.2020.05.004)
 
 It is available at https://arxiv.org/abs/1911.08424.
 
