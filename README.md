@@ -34,7 +34,8 @@ The script **experiment2** runs the experiment we present in Section 5.2 of our 
 Please see our paper for further details.
 
 ## Requirements
-Portions of our code requires Tensor Toolbox version 2.6 by Bader, Kolda and others (available at http://www.sandia.gov/~tgkolda/TensorToolbox/).
+Portions of our code require Tensor Toolbox by Bader, Kolda and others (available at https://www.tensortoolbox.org). 
+We used version 2.6 of Tensor Toolbox in our work, but newer versions should also work fine.
 
 ## Installation
 Run the file **compile_all_mex.m** inside the folder help_functions. Alternatively, simply compile each C file individually by running "mex filename.c" inside Matlab.
